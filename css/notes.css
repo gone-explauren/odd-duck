@@ -1,0 +1,236 @@
+/*
+
+// Goat Tinder Demo CSS
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: cornsilk;
+  color: saddlebrown;
+}
+
+main {
+  width: 1024px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: 250px 4fr;
+  grid-template-rows: 6.5rem 10rem 20rem 40%;
+}
+
+#siteLogo {
+  width: 250px;
+  z-index: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3
+}
+
+h1 {
+  font-size: 5rem;
+  color: rosybrown;
+  line-height: .8;
+  margin: 3rem 0 1rem;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+section {
+  // This element will be a grid item, but also a flex container
+  background-color: rgba(211, 187, 176, 0.3);
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+}
+
+// goat images
+section img {
+  width: 460px;
+  max-height: 26rem;
+  // aid accessiblity by preventing layout shift by adding a transparent border when a border is added in :hover styles
+  border: 5px solid transparent;
+}
+// add hover states so the user can tell what behavior is expected of them
+section img:hover {
+  border: 5px solid rosybrown;
+  cursor: pointer;
+}
+// once voting ends...
+section.no-voting img:hover {
+  border: 5px solid transparent;
+  cursor: none;
+}
+
+// results list
+ul {
+  margin: 1rem;
+}
+li {
+  margin: .5rem;
+}
+
+// button
+section + div {
+  background-color: darkgray;
+  color: lightgrey;
+  padding: .5rem 1rem;
+  width: max-content;
+  height: max-content;
+  font-size: .8rem;
+  margin: 1rem;
+
+  // Demo stretch goal
+  // This code improves the UX. Making it clear what the user should 
+  do once the voting cycle ends. Do not demo this unless you do the 
+  below 'section + div.clicks-allowed' code as well. The class  
+  'clicks-allowed' must be added to the element via the JavaScript.
+
+  pointer-events: none;
+}
+// Demo stretch goal:
+section + div.clicks-allowed {
+  background-color: rosybrown;
+  color: white;
+  cursor: pointer;
+  pointer-events: auto;
+}
+section + div.clicks-allowed:hover {
+  background-color: rgb(211, 187, 175)
+}
+
+*/
+
+
+
+/* 
+
+// Media CSS
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: mintcream;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem;
+  color: darkslategray;
+}
+h2 {
+  font-size: 2rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: teal
+}
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: darkslategray;
+}
+
+video, audio, img {
+  margin: 2rem auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+  width: 1024px;
+  margin: 3rem auto;
+}
+
+.grid section:nth-child(2) {
+  grid-column-start: 3;
+}
+
+ul li {
+  margin: .5rem;
+  font-size: .8rem;
+} 
+
+*/
+
+
+
+/*
+
+// flex-grid CSS
+* {
+  box-sizing: border-box;
+}
+
+main {
+  width: 80%;
+  margin: 3rem auto;
+}
+
+/* Refer to CSS-Grid-Layout.png in whiteboard-diagrams folder. This is the start code for that
+For 2nd step (to make the 2 row version in Flex): Add inline commented out code in LAYOUT IN FLEX section below (and the extra row of divs in index.html) to try to make the layout in flexbox. 
+For 3rd step (to make the 5 row version in Flex): just explain how setting the height on ".container div" isn't enough we'd need selectors that work row by row. This will take a lot more code. (no example code is provided for this)
+For 4th step (to make the layout in Grid): Comment out the entire LAYOUT IN FLEX section and refer to LAYOUT IN GRID section. Add more child divs inside ".container" in index.html */
+
+/*
+// Layout in Flex:
+.container {
+  border: 1px solid black;
+  display: flex;
+  // for 2nd step:
+  // flex-wrap: wrap;
+}
+
+.container div {
+  background-color: lightgray;
+  margin: .5rem;
+  border: 1px solid black;
+  flex: 1 1 20%;
+  // for 2nd step:
+  // height: 7rem;
+}
+
+// for 2nd step: change selector to:
+//div:nth-child(4n + 2)
+//div:nth-child(2) {
+  //flex: 0 1 10%;
+  //background-color: lightgreen;
+}
+
+// for 2nd step: change selector to:
+div:nth-child(4n)
+div:nth-child(4) {
+  flex: 3 0 40%;
+  background-color: skyblue;
+}
+*/
+
+/*
+// Layout in Grid:
+.container {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 10% 1fr 40%;
+  grid-template-rows: 14rem 3rem 6rem 6rem 6rem;
+}
+.container div {
+  background-color: lightgray;
+  margin: .5rem;
+  border: 1px solid black;
+}
+div:nth-child(4n + 2) {
+  background-color: lightgreen;
+}
+div:nth-child(4n) {
+  background-color: skyblue;
+} 
+*/
