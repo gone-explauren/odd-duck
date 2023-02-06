@@ -2,6 +2,10 @@
 
 ## Author: Laurel Perkins
 
-## References:
+## References
 
-## Lighthouse Accessibility Scores:
+* I used <https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/radial-gradient> to learn how to use radial-gradient background style in CSS.
+
+## Lighthouse Accessibility Scores
+
+*

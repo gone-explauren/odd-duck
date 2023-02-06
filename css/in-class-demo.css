@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: cornsilk;
+  color: saddlebrown;
+}
+
+h1 {
+  font-size: 5rem;
+  color: rosybrown;
+  line-height: .8;
+  margin: 3rem 0 1rem;
+}
+
+main {
+  width: 1024px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 6.5rem 10rem 20rem 40%;
+}
+
+#siteLogo {
+  width: 250px;
+  z-index: 2;
+}
+
+section {
+  /* This element will be a grid item, but also a flex container */
+  background-color: rgba(211, 187, 176, 0.3);
+  padding: 2rem;
+  /* The numbers below refer to the line numbers, not the columns or rows */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  display: flex;
+  justify-content: space-between;
+}
+
+section img {
+  width: 460px;
+  max-height: 26rem;
+  border: 5dpx solid transparent;
+}
+
+section img:hover {
+  cursor: pointer;
+  border:5px solid rgb(169, 108, 28);
+}
+
+ul {
+  margin: 1rem;
+}
+
+/* -- button -- */
+section + div {
+  background-color: rgba(128, 128, 128, 0.734);
+  color: lightgrey;
+  padding: .5rem 1rem;
+  width: max-content;
+  height: max-content;
+  font-size: .8rem;
+  margin: 1rem;
+}
+
+
+/* 
+
+// Flex-Grid CSS
+
+main {
+  width: 80%;
+  margin: 3rem auto;
+}
+
+.container {
+  border: 1px solid black;
+  // display: flex;
+  // flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 10% 1fr 40%;
+  grid-template-rows: 14rem 3rem 6rem 6rem 6rem;
+
+}
+.container div {
+  background-color: lightgray;
+  margin: .5rem;
+  border: 1px solid black;
+  flex: 1 1 20%;
+}
+div:nth-child(2), div:nth-child(6) {
+  // flex: 0 1 10%;
+  background-color: lightgreen;
+}
+div:nth-child(4), div:nth-child(8) {
+  // flex: 3 0 40%;
+  background-color: skyblue;
+}
+
+div#red {
+  background-color: crimson;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 5;
+} 
+
+*/
