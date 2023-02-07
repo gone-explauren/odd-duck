@@ -36,7 +36,7 @@ main {
 	display: grid;
 	/* to create evenly spaced columns and rows, 1fr wide and high */
 	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: repeat(7, 1fr);
+	grid-template-rows: repeat(25, 1fr);
 }
 
 .results {
@@ -51,7 +51,7 @@ main {
 	grid-column-start: 1;
 	grid-column-end: 3;
 	grid-row-start: 1;
-	grid-row-end: 8;
+	grid-row-end: 26;
 }
 
 /* I can't get this to work at all... */
@@ -81,7 +81,6 @@ main {
   border: 1px solid black;
 }
 
-
 /* I don't know why my images change height every time they refresh
 .imgSizeDiv {
 	padding: 10px;
@@ -89,16 +88,27 @@ main {
 } 
 */
 
+/* I want this to grow when I renderChart, but before the chart is shown on screen, this space shrinks. */
+main div {
+	padding: 20px;
+	grid-column-start: 3;
+	grid-column-end: 13;
+	grid-row-start: 4;
+	grid-row-end: 21;
+}
+
+/* why did this are shrink? */
 .text {
 	width: 99%;
+	overflow: scroll;
 	margin: .5rem .5rem .5rem 0rem;
 	padding-right: 5px;
 	background-color: floralwhite;
 	border: 1px solid black;
 	grid-column-start: 3;
 	grid-column-end: 13;
-	grid-row-start: 5;
-	grid-row-end: 8;
+	grid-row-start: 21;
+	grid-row-end: 26;
 }
 
 footer {

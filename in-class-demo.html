@@ -16,9 +16,17 @@
       <img>
       <img>
     </section>
-    <div>View Results</div>
-    <ul></ul>
+    <!--changed from a div to a p tag because the button is unnecessary-->
+    <p>View Results</p>
+    <div>
+      <!--Chart.js canvas tag-->
+      <canvas id="myChart"></canvas>
+    </div>
   </main>
+
+  <!--chartjs.org > Getting Started > Installation > jsDelivr > copy HTML-->
+  <!--Chart.js must be pasted in above app.js-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.0/dist/chart.umd.min.js"></script>
   <script src="js/app.js"></script>
 </body>
 
