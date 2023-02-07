@@ -221,7 +221,6 @@ function renderChart() {
   })
 }
 
-
 // event handler
 function handleProductClick(event) {
   // console.log(event);
