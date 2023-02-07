@@ -28,9 +28,11 @@ header h1 {
 
 main {
 	background-color: lavender;
-	/* radial-gradient(elipse at top, #e66465, transparent), radial-gradient(elipse at bottom, indigo, transparent); */
+	/* why is my gradient not working? */
+	background: radial-gradient(elipse at top, #e66465, transparent), radial-gradient(elipse at bottom, indigo, transparent);
 	border: 1px solid black;
 	width: 100%;
+	height: 666px;
 	display: grid;
 	/* to create evenly spaced columns and rows, 1fr wide and high */
 	grid-template-columns: repeat(12, 1fr);
@@ -41,6 +43,7 @@ main {
 	background-color: floralwhite;
 	border: 1px solid black;
 	margin: .5rem;
+	overflow: scroll;
 	/* 
 	there is definitely an easier way to write this...
 	grid-area: column start / row start / column end / row end
@@ -53,6 +56,8 @@ main {
 
 /* I can't get this to work at all... */
 .img-choices {
+	height: 250px;
+	margin-top: .5rem;
 	/* .img-choices is the child of main, where the grid display was added. .img-choice secion covers this area of the grid */
 	grid-column-start: 3;
 	grid-column-end: 13;
@@ -74,7 +79,15 @@ main {
 	margin: .5rem;
 	padding-right: 10px;
   border: 1px solid black;
+}
+
+
+/* I don't know why my images change height every time they refresh
+.imgSizeDiv {
+	padding: 10px;
+	height: 250px;
 } 
+*/
 
 .text {
 	width: 99%;
@@ -92,4 +105,16 @@ footer {
 	width: 100%;
 	height: 75px;
 	background-color: greenyellow;
+}
+
+button {
+	background-color: #e66465;
+	color: black;
+	border-radius: 10%;
+}
+
+button:hover {
+	background-color: yellowgreen;
+	color: indigo;
+	border-radius: 40%;
 }

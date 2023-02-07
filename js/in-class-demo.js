@@ -62,7 +62,6 @@ let smile = new Goat('smiling-goat');
 allGoats = [sweater, cruisin, float, hand, kissing, sassy, smile];
 
 
-
 // GLOBAL FUNCTIONS
 
 /*
@@ -76,17 +75,43 @@ function selectRandomGoat() {
   return Math.floor(Math.random() * allGoats.length); // The maximum is exclusive and the minimum is inclusive
 }
 
+// this needs to be a global variable, but I am leaving it here for the ease of reading my notes :)
+// create an array to hold the goats used in the goat picker
+let randomGoatArray = [];
+
 function renderGoats() {
-  let goat1 = selectRandomGoat();
-  let goat2 = selectRandomGoat();
-  console.log(goat1, goat2);
-  // seriously consider using an array here
-  // remember: how do you know if an array includes soemthing?
-  // google it and find out
-  while (goat1 === goat2) {
-    goat2 = selectRandomGoat();
-    console.log(goat1, goat2);
+  // // this works as long as there are just two to a few choices, but the code gets messy if there are too many choices.
+  // // let's use another method here...
+  
+  // let goat1 = selectRandomGoat();
+  // let goat2 = selectRandomGoat();
+  // console.log(goat1, goat2);
+  
+  // while (goat1 === goat2) {
+    //   goat2 = selectRandomGoat();
+    //   console.log(goat1, goat2);
+  // }
+
+
+
+  // randomGoatArray will be have 4 goats in it, but I am only creating a variable of two of them
+  while (randomGoatArray.length < 4) {
+    let randomGoat = selectRandomGoat();
+    console.log(`Your random goat is ${randomGoat}.`);
+
+    //check and see if the array already inclues that random goat.
+    // haystack.includes(needle)
+    // ! bang: a negative statement
+    if (!randomGoatArray.includes(randomGoat)) {
+      // if randomGoat is NOT (!) included in randomGoatArray, wit will be pushed into the array
+      randomGoatArray.push[randomGoat];
+    }
   }
+
+  // new goats are being added to the end of the array, old goats should be removed from the beginning of the array so they cannot be repeated from the previous round
+  let goat1 = randomGoatArray.shift();
+  let goat2 = randomGoatArray.shift();
+  console.log(goat1, goat2);
 
   // change the images displayed in the DOM
   image1.src = allGoats[goat1].src;
