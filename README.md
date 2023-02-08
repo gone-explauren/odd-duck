@@ -8,4 +8,4 @@
 
 ## Lighthouse Accessibility Scores
 
-*
+* ![Lighthouse Score for Lab 11b](assets/lab-11-lighthouse.jpg)

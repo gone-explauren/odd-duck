@@ -9,11 +9,6 @@ let myContainer = document.querySelector('.img-choices');
 let myButton = document.createElement('button');
 myButton.textContent = 'Show Results!';
 
-// // not working
-// // create div to contain imgs and control img size
-// let imgSizeDiv = document.createElement('div');
-// document.querySelector('.imgChoices').appendChild(imgSizeDiv);
-
 // this only works as long as these are the only imgs on the page; otherwise, "nth child" needs to be specified as child of what.
 let image1 = document.querySelector('img:first-child');
 // console.log(image1);
@@ -30,7 +25,7 @@ let image3 = document.querySelector('img:nth-child(3)');
 
 
 let numberVS = 0;
-let numberVSAllowed = 2;
+let numberVSAllowed = 25;
 
 let allProducts = [];
 
@@ -221,7 +216,6 @@ function renderChart() {
   })
 }
 
-
 // event handler
 function handleProductClick(event) {
   // console.log(event);
@@ -241,9 +235,9 @@ function handleProductClick(event) {
   // change images after each vote
   if (numberVS < numberVSAllowed) {
     renderProducts();
+  }
 
-  } else {
-
+  else {
     // remove the event to disable voting
     myContainer.removeEventListener('click', handleProductClick);
     // console.log(renderResults);
@@ -263,10 +257,11 @@ function handleProductClick(event) {
 }
 
 // // not working
-// myButton.removeEventListener('click', renderResults);
+// myButton.removeEventListener();
 
 // // why is it not removing my button?
 // myButton.remove();
+
 
 // click events
 myContainer.addEventListener('click', handleProductClick)
