@@ -107,22 +107,38 @@ function selectRandomProduct() {
 
 
 function renderProducts() {
-  let product1 = selectRandomProduct();
-  let product2 = selectRandomProduct();
-  let product3 = selectRandomProduct();
-  // console.log(product1, product2, product3);
 
-  // remember: how do you know if an array includes soemthing?
-  // google it and find out
-  // let productArray = [product1, product2, product3];
+  let randomProductArray = [];
 
-  // don't let the same image return as multiple products in the same round
-  // there's probably a better and more elegant way to write this and easily allow for more than three options
-  while (product1 === product2 || product1 === product3 || product2 === product3) {
-    product2 = selectRandomProduct();
-    product3 = selectRandomProduct();
+  // let product1 = selectRandomProduct();
+  // let product2 = selectRandomProduct();
+  // let product3 = selectRandomProduct();
+  // // console.log(product1, product2, product3);
+
+  // // don't let the same image return as multiple products in the same round
+  // // there's probably a better and more elegant way to write this and easily allow for more than three options
+  // while (product1 === product2 || product1 === product3 || product2 === product3) {
+  //   product2 = selectRandomProduct();
+  //   product3 = selectRandomProduct();
+  // }
+  // // console.log(product1,product2,product3);
+
+  // don't let the same product show up twice in a row
+  while (randomProductArray.length < 6) {
+    let randomProduct = selectRandomProduct();
+     // console.log(`Your random product is ${randomProduct}.`);
+
+    // check and see if the array already inclues that random product
+    if (!randomProductArray.includes(randomProduct)) {
+      randomProductArray.push(randomProduct);
+    }
+    
   }
-  // console.log(product1,product2,product3);
+  
+  let product1 = randomProductArray.shift();
+  let product2 = randomProductArray.shift();
+  let product3 = randomProductArray.shift();
+  // console.log(product1, product2, product3);
 
 
   // change the images displayed in the DOM
@@ -184,7 +200,8 @@ function renderChart() {
   for (let i = 0; i < allProducts.length; i++) {
     productViews.push(allProducts[i].views)
   }
-  console.log(productNames, productLikes, productViews);
+  // console.log(productNames, productLikes, productViews);
+
 
   // Chart.js
   const ctx = document.getElementById('myChart');
@@ -227,7 +244,7 @@ function renderChart() {
 function handleProductClick(event) {
   // console.log(event);
   // which image got clicked?
-  console.log(event.target.alt);
+  // console.log(event.target.alt);
 
   let clickedImg = event.target.alt;
 
@@ -261,8 +278,49 @@ function handleProductClick(event) {
 
     myButton.addEventListener('click', renderResults);
   }
+  saveUserPicks();
 }
 
+
+// put it into localSettings
+function saveUserPicks() {
+  // console.log(saveUserPicks);
+
+  // for (let i = 0; i < allProducts.length; i++) {
+
+    // pack it
+    let stringify = JSON.stringify(Product, numberVS);
+    // (allProducts[i].name, allProducts[i].src, allProducts[i].likes, allProducts[i].views, numberVS);
+    // console.log(stringify);
+
+    // label it ('the key') and store it
+    localStorage.setItem('userPicks', stringify);
+  // }
+}
+
+// get data from localStorage
+function pageLoad() {
+
+  // use the key you set earlier
+  let getUserPicks = localStorage.getItem('userPicks');
+
+  // confirm data was returned from localStorage
+  if (getUserPicks) {
+    // console.log('hi')
+    // console.log(getUserPicks);
+
+    //unpack the data and change it back to JS from a string
+    let parsedData = JSON.parse(getUserPicks);
+    console.log(parsedData);
+
+    // //update the global variables with these new variables
+    Product = parsedData;
+    numberVS = parsedData;
+    // console.log(parsedData);
+  }
+}
+
+pageLoad();
 
 // click events
 myContainer.addEventListener('click', handleProductClick)
