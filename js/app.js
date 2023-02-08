@@ -124,7 +124,9 @@ function renderProducts() {
   // // console.log(product1,product2,product3);
 
   // don't let the same product show up twice in a row
+  // not working
   while (randomProductArray.length < 6) {
+    
     let randomProduct = selectRandomProduct();
      // console.log(`Your random product is ${randomProduct}.`);
 
@@ -132,7 +134,6 @@ function renderProducts() {
     if (!randomProductArray.includes(randomProduct)) {
       randomProductArray.push(randomProduct);
     }
-    
   }
   
   let product1 = randomProductArray.shift();
@@ -286,16 +287,17 @@ function handleProductClick(event) {
 function saveUserPicks() {
   // console.log(saveUserPicks);
 
+  // pack it.. 
   // for (let i = 0; i < allProducts.length; i++) {
-
-    // pack it
-    let stringify = JSON.stringify(Product, numberVS);
     // (allProducts[i].name, allProducts[i].src, allProducts[i].likes, allProducts[i].views, numberVS);
     // console.log(stringify);
+    
+  // don't overcompicate it, save the whole constructor
+   let stringify = JSON.stringify(allProducts);
 
-    // label it ('the key') and store it
-    localStorage.setItem('userPicks', stringify);
-  // }
+  // label it ('the key') and store it
+  localStorage.setItem('userPicks', stringify);
+   // }
 }
 
 // get data from localStorage
@@ -311,11 +313,10 @@ function pageLoad() {
 
     //unpack the data and change it back to JS from a string
     let parsedData = JSON.parse(getUserPicks);
-    console.log(parsedData);
+    // console.log(parsedData);
 
     // //update the global variables with these new variables
-    Product = parsedData;
-    numberVS = parsedData;
+    allProducts = parsedData;
     // console.log(parsedData);
   }
 }
