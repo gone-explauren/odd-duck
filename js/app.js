@@ -23,11 +23,11 @@ let image3 = document.querySelector('img:nth-child(3)');
 // imgSizeDiv.appendChild(image2);
 // imgSizeDiv.appendChild(image3);
 
-
 let numberVS = 0;
 let numberVSAllowed = 25;
 
 let allProducts = [];
+
 
 /* Properties of Product constructor:
    - name of product
@@ -47,6 +47,7 @@ function Product(name, src) {
   this.views = 0;
   this.likes = 0;
 }
+
 
 // create instances of Product
 // let robotBag = new Product('bag');
@@ -88,12 +89,15 @@ let wrongWatercan = new Product('A Watering Can, but Wrong', 'assets/water-can.j
 // let wrongwaterCan = new Product('wine-glass');
 let wrongWineGlass = new Product('A Wine Glass, but Wrong', 'assets/wine-glass.jpg');
 
+
 // Push all the products into the allProducts array so we can randomly select products
 allProducts.push(robotBag, bananaSlicer, bathroomPhone, openToeBoots, breakfastStation, meatballGum, wrongChair, cthulhuFigure, dogDuck, dragonMeat, utensilPen, petSweep, pizzaScissors, sharkSleep, babySweep, probablyAStarWarsThing, unicornMeat, wrongWatercan, wrongWineGlass);
+
 
 // for (let i = 0; i < allProducts.length; i++) {
 // console.log (allProducts[i].name, allProducts[i].src);
 // }
+
 
 // Global functions
 function selectRandomProduct() {
@@ -111,7 +115,6 @@ function renderProducts() {
   // remember: how do you know if an array includes soemthing?
   // google it and find out
   // let productArray = [product1, product2, product3];
-
 
   // don't let the same image return as multiple products in the same round
   // there's probably a better and more elegant way to write this and easily allow for more than three options
@@ -160,6 +163,7 @@ function renderResults() {
     ul.appendChild(li);
   }
   renderChart();
+  myButton.remove();
 }
 // console.log(results);
 
@@ -193,6 +197,7 @@ function renderChart() {
         label: '# of Votes',
         data: productLikes,
         borderWidth: 1,
+        // some customization of the chart
         backgroundColor: 'rgba(76, 39, 163, .5)',
         borderColor: 'rgba(76, 39, 163, 1)',
         hoverBackgroundColor: 'rgba(76, 39, 163, 1)'
@@ -207,6 +212,8 @@ function renderChart() {
       }]
     },
     options: {
+      // change the direction of the bar graph: bars are not horizontal
+      indexAxis: 'y',
       scales: {
         y: {
           beginAtZero: true
@@ -247,7 +254,7 @@ function handleProductClick(event) {
     alert('The polls have closed! Thank you for voting.');
 
     // display results
-    let divTag = document.querySelector('main > div');
+    let divTag = document.querySelector('.text > div');
 
     // append button to appropriate section
     divTag.appendChild(myButton);
@@ -255,12 +262,6 @@ function handleProductClick(event) {
     myButton.addEventListener('click', renderResults);
   }
 }
-
-// // not working
-// myButton.removeEventListener();
-
-// // why is it not removing my button?
-// myButton.remove();
 
 
 // click events

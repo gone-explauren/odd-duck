@@ -35,7 +35,7 @@ main {
 	display: grid;
 	/* to create evenly spaced columns and rows, 1fr wide and high */
 	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: repeat(25, 1fr);
+	grid-template-rows: repeat(9, 1fr);
 }
 
 .results {
@@ -43,6 +43,8 @@ main {
 	border: 1px solid black;
 	margin: .5rem;
 	overflow: scroll;
+	font-size: 12;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	/* 
 	there is definitely an easier way to write this...
 	grid-area: column start / row start / column end / row end
@@ -50,7 +52,7 @@ main {
 	grid-column-start: 1;
 	grid-column-end: 3;
 	grid-row-start: 1;
-	grid-row-end: 26;
+	grid-row-end: 10;
 }
 
 .img-choices {
@@ -62,50 +64,54 @@ main {
 	grid-row-start: 1;
 	grid-row-end: 4;
 
-	/* these imgs are grandchildren of main, and not affected by the grid set in main. This is a grid for the children of .img-choices */
+
+	/* the imgs inside of this parent .img-choices are grandchildren of main, and not affected by the grid set in main. */
+	display: flex;
+	justify-content: space-around;
+	gap: px;
+	
+	/* This is a grid for the children of .img-choices that I decided not to use bc it was buggin..
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: 1fr;
-	gap: .5rem;
+	gap: .5rem; */
 }
 
 .img-choices img {
 	background-color: #e66465;
 	/* width needed to be adjusted, because once padding was added around each img and width was set to 100%, there was overflow out of the grid space */
-	width: 95%;
-	height: 100%;
+	width: 33%;
+	height: 300px;
 	margin: .5rem;
-	padding: 10px;
+	padding: 5px;
   border: 1px solid black;
 }
 
-/* I don't know why my images change height every time they refresh
-.imgSizeDiv {
-	padding: 10px;
-	height: 250px;
-} 
-*/
-
-/* I want this to grow when I renderChart, but before the chart is shown on screen, this space shrinks.
-main div {
-	padding: 20px;
-	grid-column-start: 3;
-	grid-column-end: 13;
-	grid-row-start: 4;
-	grid-row-end: 14;
-} */
+.img-choices img:hover {
+	background-color: #e93a3a;
+}
 
 .text {
 	width: 99%;
 	overflow: scroll;
 	margin: .5rem .5rem .5rem 0rem;
-	padding-right: 5px;
+	padding: 5px;
 	background-color: floralwhite;
 	border: 1px solid black;
+
 	grid-column-start: 3;
 	grid-column-end: 13;
-	grid-row-start: 14;
-	grid-row-end: 26;
+	grid-row-start: 5;
+	grid-row-end: 10;
+	
+	/*the child elements of this element will be flex display instead of grid */
+	display: flex;
+	position: relative;
+}
+
+.text div {
+	height: 400px;
+	width: 100%;
 }
 
 footer {
@@ -115,9 +121,18 @@ footer {
 }
 
 button {
+	height: 50px;
+	width: 100px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
 	background-color: #e66465;
 	color: black;
 	border-radius: 10%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px;
 }
 
 button:hover {

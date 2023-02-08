@@ -234,3 +234,16 @@ div:nth-child(4n) {
   background-color: skyblue;
 } 
 */
+
+/* 
+// Dark more and light mode:
+
+.dark {
+  color: white;
+  background-color: #555;
+}
+
+.light {
+  color: black;
+  background-color: white;
+} */
