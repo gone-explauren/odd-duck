@@ -15,7 +15,7 @@ header {
 }
 
 /* header img {
-
+	don't have one yet :)
 } */
 
 header h1 {
@@ -28,8 +28,7 @@ header h1 {
 
 main {
 	background-color: lavender;
-	/* why is my gradient not working? */
-	background: radial-gradient(elipse at top, #e66465, transparent), radial-gradient(elipse at bottom, indigo, transparent);
+	background: radial-gradient(circle at center, #e66465 0, indigo 50%, transparent 100%);
 	border: 1px solid black;
 	width: 100%;
 	height: 666px;
@@ -54,7 +53,6 @@ main {
 	grid-row-end: 26;
 }
 
-/* I can't get this to work at all... */
 .img-choices {
 	height: 250px;
 	margin-top: .5rem;
@@ -73,11 +71,11 @@ main {
 
 .img-choices img {
 	background-color: #e66465;
-	/* width needed to be adjusted, because once padding was addedaround each img and width was set to 100%, there was overflow out of the grid space */
+	/* width needed to be adjusted, because once padding was added around each img and width was set to 100%, there was overflow out of the grid space */
 	width: 95%;
 	height: 100%;
 	margin: .5rem;
-	padding-right: 10px;
+	padding: 10px;
   border: 1px solid black;
 }
 
@@ -88,16 +86,15 @@ main {
 } 
 */
 
-/* I want this to grow when I renderChart, but before the chart is shown on screen, this space shrinks. */
+/* I want this to grow when I renderChart, but before the chart is shown on screen, this space shrinks.
 main div {
 	padding: 20px;
 	grid-column-start: 3;
 	grid-column-end: 13;
 	grid-row-start: 4;
-	grid-row-end: 21;
-}
+	grid-row-end: 14;
+} */
 
-/* why did this are shrink? */
 .text {
 	width: 99%;
 	overflow: scroll;
@@ -107,7 +104,7 @@ main div {
 	border: 1px solid black;
 	grid-column-start: 3;
 	grid-column-end: 13;
-	grid-row-start: 21;
+	grid-row-start: 14;
 	grid-row-end: 26;
 }
 
