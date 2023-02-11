@@ -12,4 +12,4 @@
 
 * ![Lighthouse Score for Lab 13](assets/lab-13-lighthouse.jpg)
 
-* ![Lighthouse Score for Final Submission](assets/lab-15b-lighthouse.jpg)
+* ![Lighthouse Score for Lab 15b](assets/lab-15b-lighthouse.jpg)
