@@ -11,3 +11,5 @@
 * ![Lighthouse Score for Lab 11b](assets/lab-11-lighthouse.jpg)
 
 * ![Lighthouse Score for Lab 13](assets/lab-13-lighthouse.jpg)
+
+* ![Lighthouse Score for Lab 15b](assets/lab-15b-lighthouse.jpg)
